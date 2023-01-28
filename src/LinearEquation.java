@@ -1,8 +1,8 @@
 public class LinearEquation {
-    private int x1;
-    private int x2;
-    private int y1;
-    private int y2;
+    private final int x1;
+    private final int x2;
+    private final int y1;
+    private final int y2;
     private String fractionSlope;
 
 
@@ -35,8 +35,7 @@ public class LinearEquation {
        (x2, y2), rounded to the nearest hundredth */
     public double yIntercept() {
 
-        double v = y1 - (slope() * x1);
-        return v;
+        return y1 - (slope() * x1);
     }
 
     public String fractionSlope() {
@@ -72,9 +71,8 @@ public class LinearEquation {
    both x and y coordinates as decimals to the nearest hundredth, e.g (-5.0, 6.75) */
     public String coordinateForX(double xValue) {
 //        double yValue = Math.round((slope() * xValue) + yIntercept());
-        double yValue = (double)((slope() * xValue) + yIntercept());
-        String cord = "(" + xValue + ", " + yValue + ")";
-        return cord;
+        double yValue = ((slope() * xValue) + yIntercept());
+        return "(" + xValue + ", " + yValue + ")";
 
     }
 
